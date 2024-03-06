@@ -888,4 +888,5 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/year_month_weekday.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/literals.h \
   /Users/kuba/Documents/MojeDokumenty/studia/IV\ semestr/Projekt\ AiZO/./sorting_algorithms/insertion_sort.h \
-  /Users/kuba/Documents/MojeDokumenty/studia/IV\ semestr/Projekt\ AiZO/./sorting_algorithms/heap_sort.h
+  /Users/kuba/Documents/MojeDokumenty/studia/IV\ semestr/Projekt\ AiZO/./sorting_algorithms/heap_sort.h \
+  /Users/kuba/Documents/MojeDokumenty/studia/IV\ semestr/Projekt\ AiZO/./sorting_algorithms/shell_sort.h

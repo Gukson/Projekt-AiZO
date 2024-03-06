@@ -2,39 +2,40 @@
 #include <vector>
 using namespace std;
 
-void generowanie_kopca(vector<int> arr, int N, int i)
+void max_heapify(std::vector<int>& arr, int i, int size_)
 {
+    int largest,
+	l = (2*i) + 1, 
+	r = l + 1;
 
-	int largest = i;
+    if(l < size_ && arr[l] > arr[i])
+        largest = l;
+    else
+        largest = i;
 
-    //wzory na dzieci danego rodzica
-	int l = 2 * i + 1; 
+    if(r < size_ && arr[r] > arr[largest])
+        largest = r;
 
-	int r = 2 * i + 2;
-
-	if (l < N && arr[l] > arr[largest])
-		largest = l;
-
-	if (r < N && arr[r] > arr[largest])
-		largest = r;
-
-	if (largest != i) {
-		swap(arr[i], arr[largest]);
-
-		generowanie_kopca(arr, N, largest);
-	}
+    if(largest != i)
+    {
+        std::swap(arr[i], arr[largest]);
+        max_heapify(arr, largest, size_);
+    }
 }
 
-void heapSort(vector<int> arr, int N)
+void build_max_heap(std::vector<int>& arr)
 {
-    //generowanie pierwszego kopc
-	for (int i = N / 2 - 1; i >= 0; i--)
-		generowanie_kopca(arr, N, i);
+    for(int i = (arr.size() / 2); i >= 0; i--)
+    max_heapify(arr, i, arr.size());
+}
 
-	for (int i = N - 1; i > 0; i--) { //zamiana ostatniego elementu tablicy z pierwszym (korzeniem) i ponowne generowanie kopca
-
-		swap(arr[0], arr[i]);
-
-		generowanie_kopca(arr, i, 0);
-	}
+void heap_sort(vector<int> data, int n)
+{
+   build_max_heap(data);
+   for(int i = data.size() - 1; i > 0; i--)
+   {
+        swap(data[0], data[i]);
+        n--;
+        max_heapify(data, 0, n);
+    }
 }
