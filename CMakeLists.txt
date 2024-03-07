@@ -8,4 +8,5 @@ set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 set(CMAKE_BUILD_TYPE Debug)
 
 project(AiZO)
-add_executable(main main.cpp)
+add_executable(main main.cpp
+        heap_sort/HeapSort.cpp)

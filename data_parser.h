@@ -9,7 +9,7 @@ vector<vector<int> > data_parser() {
     vector<vector<int> > data;
     vector<string> strings;
     string line;
-    ifstream file("data/input.txt");
+    ifstream file("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/input.txt");
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
         return data;
