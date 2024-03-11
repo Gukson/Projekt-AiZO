@@ -65,9 +65,9 @@ int QuickSort::chooseRightPivot(vector<int> *arr, int left, int right) {
 //Tablica argumentów co do tego ile razy daną rzecz chcemy wykonać? albo czy wgl jakąs wykonać
 void QuickSort::run(){
     QuickSort::testQuickSort(100,QuickSort::chooseRightPivot,"Right pivot");
-    QuickSort::testQuickSort(100,QuickSort::chooseRandomPivot,"Random pivot");
-    QuickSort::testQuickSort(100,QuickSort::chooseLeftPivot,"Left pivot");
-    QuickSort::testQuickSort(100,QuickSort::chooseCentralPivot,"Central pivot");
+//    QuickSort::testQuickSort(100,QuickSort::chooseRandomPivot,"Random pivot");
+//    QuickSort::testQuickSort(100,QuickSort::chooseLeftPivot,"Left pivot");
+//    QuickSort::testQuickSort(100,QuickSort::chooseCentralPivot,"Central pivot");
 }
 
 void QuickSort::testQuickSort(int repeat, int (*pivotChooser) (vector<int>*, int, int), string pivotKind) {
@@ -86,7 +86,7 @@ void QuickSort::testQuickSort(int repeat, int (*pivotChooser) (vector<int>*, int
         {
             vector<int> duplicateVector(quickSortData[x].begin(), quickSortData[x].end());
             auto start = chrono::high_resolution_clock::now();
-//            quickSort(pivotChooser, &duplicateVector, 0, duplicateVector.size() - 1);
+            quickSort(pivotChooser, &duplicateVector, 0, duplicateVector.size() - 1);
             auto finish = chrono::high_resolution_clock::now();
             auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
             chrono::duration<double, std::milli> ms_double = finish - start;
@@ -107,6 +107,3 @@ void QuickSort::testQuickSort(int repeat, int (*pivotChooser) (vector<int>*, int
     }
     outputFile.close();
 }
-
-
-

@@ -7,6 +7,7 @@
 using namespace std;
 
 class QuickSort {
+    private:
     vector<vector<int> > quickSortData;
 
     public:
