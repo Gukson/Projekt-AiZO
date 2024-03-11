@@ -17,7 +17,8 @@ class QuickSort {
         static int chooseCentralPivot(vector<int> *arr, int left, int right);
         static int chooseRandomPivot(vector<int> *arr, int left, int right);
         void quickSort(int (*func)(vector<int> *arr, int left, int right),vector<int> *arr, int left, int right);
-        void testQuickSort(int repeat);
+        void testQuickSort(int repeat, int (*pivotChooser) (vector<int> *arr, int left, int right), string pivotKind);
+        void run();
 };
 
 

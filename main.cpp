@@ -1,10 +1,10 @@
 #include <iostream>
-#include "data_parser.h"
+#include "data/parsers/data_parser.h"
 #include <vector>
-#include "heap_sort/heap_sort.h"
-#include "shell_sort/ShellSort.h"
-#include "quick_sort/QuickSort.h"
-#include "float_parser.h"
+#include "sorting_algorithms/heap_sort/heap_sort.h"
+#include "sorting_algorithms/shell_sort/ShellSort.h"
+#include "sorting_algorithms/quick_sort/QuickSort.h"
+#include "data/parsers/float_parser.h"
 
 using namespace std;
 
@@ -24,19 +24,19 @@ int main()
 //    test.push_back(temp);
 //    cout << test.size() << endl;
 
-    auto start = chrono::high_resolution_clock::now();
-    HeapSort h1(data_int);
-    h1.testHeapSort(100);
-
-    ShellSort s1(data_int, data_float);
-    s1.testShellSort(100);
+//    auto start = chrono::high_resolution_clock::now();
+//    HeapSort h1(data_int);
+//    h1.testHeapSort(100);
+//
+//    ShellSort s1(data_int, data_float);
+//    s1.testShellSort(100);
 
     QuickSort q1(data_int);
-    q1.testQuickSort(100);
-    auto finish = chrono::high_resolution_clock::now();
-    auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
-    chrono::duration<double, std::milli> ms_double = finish - start;
-    cout << endl;
-    cout << "Całość zajęła: " << ms_double.count() / 60000 << " min";
+    q1.run();
+//    auto finish = chrono::high_resolution_clock::now();
+//    auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
+//    chrono::duration<double, std::milli> ms_double = finish - start;
+//    cout << endl;
+//    cout << "Całość zajęła: " << ms_double.count() / 60000 << " min";
 
 };

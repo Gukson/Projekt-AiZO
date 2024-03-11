@@ -9,12 +9,12 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(AiZO)
 add_executable(main main.cpp
-        heap_sort/HeapSort.cpp
-        shell_sort/ShellSort.cpp
-        shell_sort/ShellSort.h
-        quick_sort/QuickSort.cpp
-        quick_sort/QuickSort.h
-        quick_sort/QuickSort.h
-        float_parser.h
-        float_parser.h
+        sorting_algorithms/heap_sort/HeapSort.cpp
+        sorting_algorithms/shell_sort/ShellSort.cpp
+        sorting_algorithms/shell_sort/ShellSort.h
+        sorting_algorithms/quick_sort/QuickSort.cpp
+        sorting_algorithms/quick_sort/QuickSort.h
+        sorting_algorithms/quick_sort/QuickSort.h
+        data/parsers/float_parser.h
+        data/parsers/float_parser.h
 )
