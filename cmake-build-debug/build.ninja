@@ -61,6 +61,18 @@ build CMakeFiles/main.dir/heap_sort/HeapSort.cpp.o: CXX_COMPILER__main_unscanned
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir/heap_sort
 
+build CMakeFiles/main.dir/shell_sort/ShellSort.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/shell_sort/ShellSort.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/shell_sort/ShellSort.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics   -std=c++11
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/shell_sort
+
+build CMakeFiles/main.dir/quick_sort/QuickSort.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/quick_sort/QuickSort.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/quick_sort/QuickSort.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics   -std=c++11
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/quick_sort
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target main
@@ -69,7 +81,7 @@ build CMakeFiles/main.dir/heap_sort/HeapSort.cpp.o: CXX_COMPILER__main_unscanned
 #############################################
 # Link the executable main
 
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/heap_sort/HeapSort.cpp.o
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/heap_sort/HeapSort.cpp.o CMakeFiles/main.dir/shell_sort/ShellSort.cpp.o CMakeFiles/main.dir/quick_sort/QuickSort.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :

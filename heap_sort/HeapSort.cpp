@@ -28,6 +28,7 @@ void HeapSort::heapSort(vector<int> data, int n)
         n--;
         max_heapify(data, 0, n);
     }
+
 };
 
 void HeapSort::build_max_heap(std::vector<int> &arr)
@@ -59,7 +60,7 @@ void HeapSort::max_heapify(std::vector<int> &arr, int i, int size_)
 
 void HeapSort::testHeapSort(int repeat)
 {
-    ofstream outputFile("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/output.txt");
+    ofstream outputFile("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/output.txt", std::ios_base::app);
     if (!outputFile.is_open()) {
         cerr << "Error opening file." << endl;
         return;
@@ -72,12 +73,14 @@ void HeapSort::testHeapSort(int repeat)
     {
         for (int y = 0; y < repeat; y++)
         {
+            vector<int> duplicateVector(data[x].begin(), data[x].end());
             auto start = chrono::high_resolution_clock::now();
-            heapSort(data[x], data[x].size());
+            heapSort(duplicateVector, duplicateVector.size());
             auto finish = chrono::high_resolution_clock::now();
             auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
             chrono::duration<double, std::milli> ms_double = finish - start;
             time_table[y] = ms_double.count() / 1000;
+
         }
 
         double sum = 0;
