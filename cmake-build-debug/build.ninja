@@ -73,11 +73,17 @@ build CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o: CXX_COM
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir/sorting_algorithms/quick_sort
 
-build CMakeFiles/main.dir/data/generator/DataGenerator.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/data/generator/DataGenerator.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/data/generator/DataGenerator.cpp.o.d
+build CMakeFiles/main.dir/UI/GUI.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/UI/GUI.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/UI/GUI.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics   -std=c++11
   OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/data/generator
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/UI
+
+build CMakeFiles/main.dir/generator/DataGenerator.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/generator/DataGenerator.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/generator/DataGenerator.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics   -std=c++11
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/generator
 
 
 # =============================================================================
@@ -87,7 +93,7 @@ build CMakeFiles/main.dir/data/generator/DataGenerator.cpp.o: CXX_COMPILER__main
 #############################################
 # Link the executable main
 
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/sorting_algorithms/heap_sort/HeapSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o CMakeFiles/main.dir/data/generator/DataGenerator.cpp.o
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/sorting_algorithms/heap_sort/HeapSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o CMakeFiles/main.dir/UI/GUI.cpp.o CMakeFiles/main.dir/generator/DataGenerator.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :

@@ -1,19 +1,19 @@
 //
-// Created by Kuba on 11/03/2024.
+// Created by Kuba on 12/03/2024.
 //
 
 #include "DataGenerator.h"
-#include <vector>
 #include <iostream>
 #include <fstream>
+#include <utility>
+#include <vector>
 #include <random>
 #include <sstream>
-#include <string>
 
 using namespace std;
 
-void DataGenerator::generateData(vector<int> amount, string fileName, int percent) {
-    ofstream outputFile("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/"+fileName);
+void DataGenerator::generate(){
+    ofstream outputFile("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/" + paths);
 
     if (!outputFile.is_open()) {
         cerr << "Failed to open the file!" << std::endl;
@@ -23,7 +23,7 @@ void DataGenerator::generateData(vector<int> amount, string fileName, int percen
     for(int x = 0; x < amount.size(); x++){
         vector<int> data;
 
-        int sorted = amount[x] * percent / 100;
+        int sorted = amount[x] * percent[x] / 100;
         for(int i = 0; i < sorted; i++){
             data.push_back(i);
         }
@@ -49,4 +49,10 @@ void DataGenerator::generateData(vector<int> amount, string fileName, int percen
     }
 
     cout << "Ukończono tworzenie pliku" << endl;
+}
+
+DataGenerator::DataGenerator(vector<int> data, vector<int> percents, string path) {
+    amount = std::move(data);
+    percent = std::move(percents);
+    paths = std::move(path);
 }

@@ -8,7 +8,8 @@ set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 set(CMAKE_BUILD_TYPE Debug)
 
 project(AiZO)
-add_executable(main main.cpp
+add_executable(
+        main main.cpp
         sorting_algorithms/heap_sort/HeapSort.cpp
         sorting_algorithms/shell_sort/ShellSort.cpp
         sorting_algorithms/shell_sort/ShellSort.h
@@ -17,6 +18,9 @@ add_executable(main main.cpp
         sorting_algorithms/quick_sort/QuickSort.h
         data/parsers/float_parser.h
         data/parsers/float_parser.h
-        data/generator/DataGenerator.cpp
-        data/generator/DataGenerator.h
+        UI/GUI.cpp
+        UI/GUI.h
+        generator/DataGenerator.cpp
+        generator/DataGenerator.h
+
 )
