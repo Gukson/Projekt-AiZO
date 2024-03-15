@@ -5,11 +5,11 @@
 
 using namespace std;
 
-vector<vector<float> > data_parser_float() {
+vector<vector<float> > data_parser_float(string path) {
     vector<vector<float> > data;
     vector<string> strings;
     string line;
-    ifstream file("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/input.txt");
+    ifstream file("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/" + path);
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
         return data;

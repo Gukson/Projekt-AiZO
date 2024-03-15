@@ -6,6 +6,3 @@ class GUI {
     public:
         void mainMenu();
 };
-
-
-

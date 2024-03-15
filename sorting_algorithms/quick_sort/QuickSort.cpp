@@ -63,11 +63,11 @@ int QuickSort::chooseRightPivot(vector<int> *arr, int left, int right) {
 }
 
 //Tablica argumentów co do tego ile razy daną rzecz chcemy wykonać? albo czy wgl jakąs wykonać
-void QuickSort::run(){
-    QuickSort::testQuickSort(100,QuickSort::chooseRightPivot,"Right pivot");
-//    QuickSort::testQuickSort(100,QuickSort::chooseRandomPivot,"Random pivot");
-//    QuickSort::testQuickSort(100,QuickSort::chooseLeftPivot,"Left pivot");
-//    QuickSort::testQuickSort(100,QuickSort::chooseCentralPivot,"Central pivot");
+void QuickSort::run(int repeat){
+    QuickSort::testQuickSort(repeat,QuickSort::chooseRightPivot,"Right pivot");
+    QuickSort::testQuickSort(repeat,QuickSort::chooseRandomPivot,"Random pivot");
+    QuickSort::testQuickSort(repeat,QuickSort::chooseLeftPivot,"Left pivot");
+    QuickSort::testQuickSort(repeat,QuickSort::chooseCentralPivot,"Central pivot");
 }
 
 void QuickSort::testQuickSort(int repeat, int (*pivotChooser) (vector<int>*, int, int), string pivotKind) {
