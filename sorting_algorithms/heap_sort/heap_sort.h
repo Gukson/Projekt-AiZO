@@ -4,13 +4,12 @@
 using namespace std;
 
 class HeapSort{
-    
-        vector<vector<int> > data;
     public:
-        HeapSort(vector<vector<int> >);
-        void heapSort(vector<int> data, int n);
-        void build_max_heap(vector<int> &arr);
-        void heap_sort(vector<int> data, int n);
-        void max_heapify(std::vector<int> &arr, int i, int size_);
-        void testHeapSort(int repeat);
+        template<typename T>
+        void heapSort(vector<T> data, int n);
+        template<typename T>
+        void build_max_heap(vector<T> &arr);
+        template<typename T>
+        void max_heapify(vector<T> &arr, int i, int size);
 };
+#include "Heapsort.tpp"

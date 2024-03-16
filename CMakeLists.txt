@@ -10,7 +10,7 @@ set(CMAKE_BUILD_TYPE Debug)
 project(AiZO)
 add_executable(
         main main.cpp
-        sorting_algorithms/heap_sort/HeapSort.cpp
+        sorting_algorithms/heap_sort/Heapsort.tpp
         sorting_algorithms/shell_sort/ShellSort.cpp
         sorting_algorithms/shell_sort/ShellSort.h
         sorting_algorithms/quick_sort/QuickSort.cpp

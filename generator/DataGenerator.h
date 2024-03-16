@@ -13,6 +13,7 @@ class DataGenerator {
         vector<int > percent;
         string paths;
     public:
-        void generate();
-        explicit DataGenerator(vector<int> data, vector<int> percents, string path);
+        void generate(vector<int> data, vector<int> percents, string path);
+        template<typename T>
+        static vector<T> generateVector(int size, int percents);
 };

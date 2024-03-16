@@ -5,14 +5,12 @@
 #include "DataGenerator.h"
 #include <iostream>
 #include <fstream>
-#include <utility>
 #include <vector>
 #include <random>
 #include <sstream>
 
 using namespace std;
-
-void DataGenerator::generate(){
+void DataGenerator::generate(vector<int> data, vector<int> percents, string path){
     ofstream outputFile("/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/data/" + paths);
 
     if (!outputFile.is_open()) {
@@ -50,9 +48,22 @@ void DataGenerator::generate(){
 
     cout << "Ukończono tworzenie pliku" << endl;
 }
+template<typename T>
+vector<T> DataGenerator::generateVector(int size, int percents) {
+    vector<T> data;
+    int sorted = size * percents / 100;
+    for(int i = 0; i < sorted; i++){
+        data.push_back(i);
+    }
 
-DataGenerator::DataGenerator(vector<int> data, vector<int> percents, string path) {
-    amount = std::move(data);
-    percent = std::move(percents);
-    paths = std::move(path);
+    int minRange = 1;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> distribution(minRange + sorted, size);
+    for (int i = 0; i < size - sorted; ++i) {
+        int randomNumber = distribution(gen);
+        data.push_back(randomNumber);
+    }
+
+    return data;
 }

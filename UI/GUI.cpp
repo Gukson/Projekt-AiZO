@@ -45,22 +45,36 @@ void GUI::mainMenu() {
                     cin >> temp;
                     percents.push_back(temp);
                 }
-                DataGenerator d1(values,percents,path);
-                d1.generate();
+                DataGenerator d1;
+                d1.generate(values,percents,path);
                 break;
             }
             case 2:{
-                cout << "Wybierz plik zawierający dane do testowania (np. data.txt)";
-                string path;
-                cin >> path;
-
                 int repeat;
                 cout << "Podaj ilość powtórzeń algorytmu: ";
                 cin >> repeat;
 
-                vector<vector<int> > data = data_parser(path);
-                HeapSort h1(data);
-                h1.testHeapSort(repeat);
+                string type;
+                cout << "wybierz typ danych do testowania (int, float): ";
+                cin >> type;
+
+                cout << "podaj jaki procent danych ma być posortowany w momoencie generowania danych: ";
+                int temp;
+                cin >> temp;
+
+                DataGenerator g1;
+                HeapSort h1;
+                for(int x = 0; x < repeat; x++){
+                    if(type == "int"){
+                        vector<int> generatedData = DataGenerator::generateVector<int>(repeat, temp);
+                        for(int x : generatedData)cout << x <<  " ";
+                        cout << endl;
+                        h1.heapSort(generatedData,generatedData.size());
+                        for(int x = 0; x< generatedData.size(); x++ )cout << generatedData[x] <<  " ";
+                        cout << endl;
+                    }
+                }
+
                 break;
             }
             case 3:{
@@ -165,28 +179,28 @@ void GUI::mainMenu() {
                 break;
             }
             case 5:{
-                cout << "Wybierz plik zawierający dane do testowania (np. data.txt)";
-                string path;
-                cin >> path;
-
-                int repeat;
-                cout << "Podaj ilość powtórzeń algorytmu: ";
-                cin >> repeat;
-
-                vector<vector<int> > data = data_parser(path);
-                vector<vector<float> > data_float = data_parser_float(path);
-                auto start = chrono::high_resolution_clock::now();
-                HeapSort h1(data);
-                h1.testHeapSort(repeat);
-                QuickSort q1(data);
-                q1.run(repeat);
-                ShellSort s1(data,data_float);
-                s1.run(repeat);
-                auto finish = chrono::high_resolution_clock::now();
-                auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
-                chrono::duration<double, std::milli> ms_double = finish - start;
-                cout << endl;
-                cout << "Całość zajęła: " << ms_double.count() / 60000 << " min";
+//                cout << "Wybierz plik zawierający dane do testowania (np. data.txt)";
+//                string path;
+//                cin >> path;
+//
+//                int repeat;
+//                cout << "Podaj ilość powtórzeń algorytmu: ";
+//                cin >> repeat;
+//
+//                vector<vector<int> > data = data_parser(path);
+//                vector<vector<float> > data_float = data_parser_float(path);
+//                auto start = chrono::high_resolution_clock::now();
+//                HeapSort h1(data);
+//                h1.testHeapSort(repeat);
+//                QuickSort q1(data);
+//                q1.run(repeat);
+//                ShellSort s1(data,data_float);
+//                s1.run(repeat);
+//                auto finish = chrono::high_resolution_clock::now();
+//                auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
+//                chrono::duration<double, std::milli> ms_double = finish - start;
+//                cout << endl;
+//                cout << "Całość zajęła: " << ms_double.count() / 60000 << " min";
                 break;
             }
         }

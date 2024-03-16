@@ -55,12 +55,6 @@ build CMakeFiles/main.dir/main.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir
 
-build CMakeFiles/main.dir/sorting_algorithms/heap_sort/HeapSort.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/sorting_algorithms/heap_sort/HeapSort.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/sorting_algorithms/heap_sort/HeapSort.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics   -std=c++11
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/sorting_algorithms/heap_sort
-
 build CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o: CXX_COMPILER__main_unscanned_Debug /Users/kuba/Documents/MojeDokumenty/studia/IV$ semestr/Projekt$ AiZO/sorting_algorithms/shell_sort/ShellSort.cpp || cmake_object_order_depends_target_main
   DEP_FILE = CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3 -fcolor-diagnostics   -std=c++11
@@ -93,7 +87,7 @@ build CMakeFiles/main.dir/generator/DataGenerator.cpp.o: CXX_COMPILER__main_unsc
 #############################################
 # Link the executable main
 
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/sorting_algorithms/heap_sort/HeapSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o CMakeFiles/main.dir/UI/GUI.cpp.o CMakeFiles/main.dir/generator/DataGenerator.cpp.o
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o CMakeFiles/main.dir/UI/GUI.cpp.o CMakeFiles/main.dir/generator/DataGenerator.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -mmacosx-version-min=14.3
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :
