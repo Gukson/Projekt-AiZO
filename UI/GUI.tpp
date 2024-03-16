@@ -2,7 +2,7 @@
 // Created by Kuba on 12/03/2024.
 //
 
-#include "GUI.h"
+
 #include <iostream>
 #include <string>
 #include "../generator/DataGenerator.h"
@@ -70,10 +70,9 @@ void GUI::mainMenu() {
                         for(int x : generatedData)cout << x <<  " ";
                         cout << endl;
                         h1.heapSort(generatedData,generatedData.size());
-                        for(int x = 0; x< generatedData.size(); x++ )cout << generatedData[x] <<  " ";
-                        cout << endl;
                     }
                 }
+                cin >> temp;
 
                 break;
             }

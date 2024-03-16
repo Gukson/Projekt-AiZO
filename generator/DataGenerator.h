@@ -17,3 +17,5 @@ class DataGenerator {
         template<typename T>
         static vector<T> generateVector(int size, int percents);
 };
+
+#include "DataGenerator.tpp"

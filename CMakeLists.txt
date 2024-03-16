@@ -18,9 +18,9 @@ add_executable(
         sorting_algorithms/quick_sort/QuickSort.h
         data/parsers/float_parser.h
         data/parsers/float_parser.h
-        UI/GUI.cpp
+        UI/GUI.tpp
         UI/GUI.h
-        generator/DataGenerator.cpp
+        generator/DataGenerator.tpp
         generator/DataGenerator.h
 
 )

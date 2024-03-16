@@ -1,3 +1,3 @@
-/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/cmake-build-debug/CMakeFiles/main.dir
-/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/kuba/Documents/MojeDokumenty/studia/IV semestr/Projekt AiZO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/kuba/Documents/GitHub/Projekt-AiZO/cmake-build-debug/CMakeFiles/main.dir
+C:/Users/kuba/Documents/GitHub/Projekt-AiZO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kuba/Documents/GitHub/Projekt-AiZO/cmake-build-debug/CMakeFiles/rebuild_cache.dir

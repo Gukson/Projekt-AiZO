@@ -6,7 +6,9 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <chrono>
 
+using namespace std;
 
 QuickSort::QuickSort(vector<vector<int> > arrdata) {
     quickSortData = arrdata;

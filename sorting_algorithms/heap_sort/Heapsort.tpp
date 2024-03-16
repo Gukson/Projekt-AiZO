@@ -15,6 +15,11 @@ void HeapSort::heapSort(vector<T> data, int n)
         n--;
         max_heapify(data, 0, n);
     }
+    if(n <= 30){
+        for(int x = 0; x< data.size(); x++ )cout << data[x] <<  " ";
+        cout << endl;
+    }
+    cout << endl;
 
 };
 template<typename T>

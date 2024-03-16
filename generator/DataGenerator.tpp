@@ -2,7 +2,6 @@
 // Created by Kuba on 12/03/2024.
 //
 
-#include "DataGenerator.h"
 #include <iostream>
 #include <fstream>
 #include <vector>

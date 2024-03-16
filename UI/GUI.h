@@ -6,3 +6,4 @@ class GUI {
     public:
         void mainMenu();
 };
+#include "GUI.tpp"
