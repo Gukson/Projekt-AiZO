@@ -159,3 +159,18 @@ Quick Sort - int
 
 Quick Sort - int
 
+Quick Sort - int
+
+1000 -> 0.000196196
+Quick Sort - float
+
+10000 -> 0.00276559
+Quick Sort - int
+
+5 -> 1.2486e-06
+Quick Sort - float
+
+10000 -> 0.00156704
+Heap Sort - float
+
+10000 -> 0.00335823

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iostream>
 #include <vector>
 #include <fstream>
 #include <chrono>
@@ -7,20 +6,7 @@
 #ifndef DODATKOWE_FUNKCJE_H
 #define DODATKOWE_FUNKCJE_H
 
-
-
-void heapSortGUI(){
-    int repeat;
-    cout << "Podaj ilość powtórzeń algorytmu: ";
-    cin >> repeat;
-
-    string type;
-    cout << "wybierz typ danych do testowania (int, float): ";
-    cin >> type;
-
-    cout << "podaj jaki procent danych ma być posortowany w momoencie generowania danych: ";
-    int temp;
-    cin >> temp;
+void heapSortGUI(int repeat, string type, int temp){
     double time_table[repeat];
     HeapSort h1;
     DataGenerator d1;
@@ -28,11 +14,6 @@ void heapSortGUI(){
     if (!outputFile.is_open()) {
         cerr << "Error opening file." << endl;
         return;
-    }
-    if(type == "int"){
-        outputFile << "Quick Sort - int" << endl << endl;
-    } else if(type == "float"){
-        outputFile << "Quick Sort - float" << endl << endl;
     }
 
     for(int x = 0; x < repeat; x++){
@@ -66,6 +47,7 @@ void heapSortGUI(){
     }
     outputFile << repeat << " -> " << sum/ repeat << endl;
     cout << sum / repeat;
+    outputFile.close();
     cout << "wprowadź dowolną cyfreę, aby kontynuować: ";
     cin >> temp;
 }

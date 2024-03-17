@@ -10,7 +10,11 @@ class GUI {
     public:
         void mainMenu();
 };
+
+
+
 #include "GUI.tpp"
 #include "heapsortGUI.h"
+#include "quicksortGUi.h"
 
 #endif //AIZO_GUI_H

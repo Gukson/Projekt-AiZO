@@ -1,16 +1,12 @@
 # ninja log v5
-18	2278	1710606181385140889	CMakeFiles/main.dir/generator/DataGenerator.cpp.o	76d25d3ee4b5ceb4
-1	168	1710607135930979084	build.ninja	c59ce608b7af51d2
-17	1853	1710606180953773255	CMakeFiles/main.dir/sorting_algorithms/heap_sort/HeapSort.cpp.o	9dfcd70b868facca
-14	1274	1709979218353788440	CMakeFiles/main.dir/sorting_algorithms/quicksort.cpp.o	5f7d9c2d6d22252a
-22	2744	1710452294979406592	CMakeFiles/main.dir/main.cpp.o	324bb4625e458621
-15	1798	1710461879046376224	CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o	6280d497c2166bbc
-24	3389	1710452295631828577	CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o	7b8609e3a187459d
-6681	7569	1710497901562248908	main	e78a20dd4d8166b2
-21	3102	1710275324826587686	CMakeFiles/main.dir/data/generator/DataGenerator.cpp.o	9a80d5315901a207
-13	1536	1710147764790795115	CMakeFiles/main.dir/shell_sort/ShellSort.cpp.o	4fadd6810e618409
-18	1744	1710146843551676398	CMakeFiles/main.dir/heap_sort/HeapSort.cpp.o	30e524876bb3834f
-18	2397	1710606181507863702	CMakeFiles/main.dir/UI/GUI.cpp.o	901a5b7b72bb43a7
-27	1654	1710108115870907234	CMakeFiles/main.dir/quick_sort/QuickSort.cpp.o	842f59a5f99c55d5
-1	282	1710607135930979084	build.ninja	c59ce608b7af51d2
-18	3987	1710607139962791315	CMakeFiles/main.dir/UI/GUI.cpp.o	901a5b7b72bb43a7
+1	282	1710702091748643342	build.ninja	c59ce608b7af51d2
+8	1741	1710693015819138807	CMakeFiles/main.dir/sorting_algorithms/shell_sort/ShellSort.cpp.o	6280d497c2166bbc
+20	1973	1710702033633044269	CMakeFiles/main.dir/main.cpp.o	324bb4625e458621
+17	1784	1710701957948122775	CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.o	7b8609e3a187459d
+2309	2434	1710693016518761357	main	13743f3cfd359367
+31	4328	1710702099930766643	CMakeFiles/main.dir/main.cpp.o	324bb4625e458621
+4329	4447	1710702100058501602	main	abc4249fdeb1326e
+18	3680	1710702657051017215	CMakeFiles/main.dir/main.cpp.o	324bb4625e458621
+3682	3773	1710702657149481034	main	abc4249fdeb1326e
+16	4285	1710702765020207477	CMakeFiles/main.dir/main.cpp.o	324bb4625e458621
+4286	4400	1710702765137444968	main	abc4249fdeb1326e

@@ -13,7 +13,7 @@ add_executable(
         sorting_algorithms/heap_sort/Heapsort.tpp
         sorting_algorithms/shell_sort/ShellSort.cpp
         sorting_algorithms/shell_sort/ShellSort.h
-        sorting_algorithms/quick_sort/QuickSort.cpp
+        sorting_algorithms/quick_sort/QuickSort.tpp
         sorting_algorithms/quick_sort/QuickSort.h
         sorting_algorithms/quick_sort/QuickSort.h
         data/parsers/float_parser.h
@@ -24,5 +24,6 @@ add_executable(
         generator/DataGenerator.h
         UI/heapsortGUI.h
         tester.h
+        UI/quicksortGUi.h
 
 )

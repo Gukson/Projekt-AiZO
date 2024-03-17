@@ -11,6 +11,8 @@
 #include "../sorting_algorithms/quick_sort/QuickSort.h"
 #include "../sorting_algorithms/shell_sort/ShellSort.h"
 #include "heapsortGUI.h"
+#include "quicksortGUi.h"
+#include "GUI.h"
 
 
 using namespace std;
@@ -51,51 +53,63 @@ void GUI::mainMenu() {
                 break;
             }
             case 2:{
-                heapSortGUI();
-                break;
-            }
-            case 3:{
-                cout << "Wybierz plik zawierający dane do testowania (np. data.txt)";
-                string path;
-                cin >> path;
-
                 int repeat;
                 cout << "Podaj ilość powtórzeń algorytmu: ";
                 cin >> repeat;
 
+                string type;
+                cout << "wybierz typ danych do testowania (int, float): ";
+                cin >> type;
+
+                cout << "podaj jaki procent danych ma być posortowany w momoencie generowania danych: ";
                 int temp;
-                cout << "1. left pivot" << endl;
-                cout << "2. central pivot" << endl;
-                cout << "3. right pivot" << endl;
-                cout << "4. random pivot" << endl;
-                cout << "5. Wszystkie jeden po drugim" << endl;
-                cout << "Wybierz którego pivota chcesz użyć: ";
                 cin >> temp;
 
-
-                vector<vector<int> > data = data_parser(path);
-                QuickSort q1(data);
-                switch (temp) {
-                    case 1:{
-                        q1.testQuickSort(repeat,q1.chooseLeftPivot,"Left pivot");
-                        break;
-                    }
-                    case 2:{
-                        q1.testQuickSort(repeat,q1.chooseCentralPivot,"Central pivot");
-                        break;
-                    }
-                    case 3:{
-                        q1.testQuickSort(repeat,q1.chooseRightPivot,"Right pivot");
-                        break;
-                    }
-                    case 4:{
-                        q1.testQuickSort(repeat,q1.chooseRandomPivot,"Random pivot");
-                        break;
-                    }
-                    case 5:{
-                        q1.run(repeat);
-                    }
+                ofstream outputFile("../data/output.txt", std::ios_base::app);
+                if (!outputFile.is_open()) {
+                    cerr << "Error opening file." << endl;
+                    return;
                 }
+                if(type == "int"){
+                    outputFile << "Heap Sort - int" << endl << endl;
+                } else if(type == "float"){
+                    outputFile << "Heap Sort - float" << endl << endl;
+                }
+                outputFile.close();
+
+                heapSortGUI(repeat, type, temp);
+                break;
+            }
+            case 3:{
+                int repeat;
+                cout << "Podaj ilość powtórzeń algorytmu: ";
+                cin >> repeat;
+
+                string type;
+                cout << "wybierz typ danych do testowania (int, float): ";
+                cin >> type;
+
+                cout << "podaj jaki procent danych ma być posortowany w momoencie generowania danych: ";
+                int temp;
+                cin >> temp;
+
+                cout << "Jaki pivot wybrać? " << endl << "1. Lewy\n" << "2. Centralny\n" << "3. Prawy\n" << "4. Losowy\n";
+                int pivotWybor;
+                cin >> pivotWybor;
+
+                ofstream outputFile("../data/output.txt", std::ios_base::app);
+                if (!outputFile.is_open()) {
+                    cerr << "Error opening file." << endl;
+                    return;
+                }
+                if(type == "int"){
+                    outputFile << "Quick Sort - int" << endl << endl;
+                } else if(type == "float"){
+                    outputFile << "Quick Sort - float" << endl << endl;
+                }
+                outputFile.close();
+
+                quicksortGUI(repeat,type,temp,pivotWybor);
                 break;
             }
             case 4:{
