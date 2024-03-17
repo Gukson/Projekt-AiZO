@@ -96,3 +96,66 @@ Heap Sort
 200000 -> 0.0981144
 500000 -> 0.277151
 1000000 -> 0.652168
+
+Quick Sort - int
+
+5 -> 0.00014462
+Quick Sort - int
+
+Quick Sort - int
+
+5 -> 0.00028032
+Quick Sort - int
+
+100 -> 0.00699616
+Quick Sort - int
+
+100 -> 0.00696152
+Quick Sort - int
+
+Quick Sort - int
+
+100 -> 0.00708564
+Quick Sort - int
+
+100 -> 0.00696283
+Quick Sort - int
+
+5 -> 0.00032396
+Quick Sort - int
+
+100 -> 0.00711581
+Quick Sort - int
+
+6 -> 0.000329067
+Quick Sort - int
+
+6 -> 5.895e-05
+Quick Sort - int
+
+6 -> 3.85833e-05
+Quick Sort - int
+
+6 -> 2.83167e-05
+Quick Sort - int
+
+5 -> 0.00057518
+Quick Sort - int
+
+6 -> 3.27e-05
+Quick Sort - int
+
+100 -> 1.2737e-05
+Quick Sort - int
+
+5 -> 0.00070658
+Quick Sort - int
+
+100 -> 1.319e-05
+Quick Sort - int
+
+1000 -> 0.000193015
+Quick Sort - int
+
+Quick Sort - int
+

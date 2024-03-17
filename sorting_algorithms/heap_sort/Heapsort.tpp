@@ -9,18 +9,22 @@ template<typename T>
 void HeapSort::heapSort(vector<T> data, int n)
 {
     build_max_heap(data);
+    if(data.size() <= 5){
+        for(int x = 0; x< data.size(); x++ )cout << data[x] <<  " ";
+        cout << endl;
+    }
     for (int i = data.size() - 1; i > 0; i--)
     {
         swap(data[0], data[i]);
         n--;
         max_heapify(data, 0, n);
     }
-    if(n <= 30){
+
+    if(data.size() <= 5){
         for(int x = 0; x< data.size(); x++ )cout << data[x] <<  " ";
         cout << endl;
+        cout << endl;
     }
-    cout << endl;
-
 };
 template<typename T>
 void HeapSort::build_max_heap(vector<T> &arr)

@@ -2,7 +2,6 @@
 // Created by Kuba on 12/03/2024.
 //
 
-
 #include <iostream>
 #include <string>
 #include "../generator/DataGenerator.h"
@@ -11,6 +10,8 @@
 #include "../sorting_algorithms/heap_sort/heap_sort.h"
 #include "../sorting_algorithms/quick_sort/QuickSort.h"
 #include "../sorting_algorithms/shell_sort/ShellSort.h"
+#include "heapsortGUI.h"
+
 
 using namespace std;
 
@@ -50,30 +51,7 @@ void GUI::mainMenu() {
                 break;
             }
             case 2:{
-                int repeat;
-                cout << "Podaj ilość powtórzeń algorytmu: ";
-                cin >> repeat;
-
-                string type;
-                cout << "wybierz typ danych do testowania (int, float): ";
-                cin >> type;
-
-                cout << "podaj jaki procent danych ma być posortowany w momoencie generowania danych: ";
-                int temp;
-                cin >> temp;
-
-                DataGenerator g1;
-                HeapSort h1;
-                for(int x = 0; x < repeat; x++){
-                    if(type == "int"){
-                        vector<int> generatedData = DataGenerator::generateVector<int>(repeat, temp);
-                        for(int x : generatedData)cout << x <<  " ";
-                        cout << endl;
-                        h1.heapSort(generatedData,generatedData.size());
-                    }
-                }
-                cin >> temp;
-
+                heapSortGUI();
                 break;
             }
             case 3:{

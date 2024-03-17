@@ -88,6 +88,9 @@
 		<Unit filename="C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/GUI.tpp">
 			<Option target="main"/>
 		</Unit>
+		<Unit filename="C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/heapsortGUI.h">
+			<Option target="main"/>
+		</Unit>
 		<Unit filename="C:/Users/kuba/Documents/GitHub/Projekt-AiZO/data/parsers/float_parser.h">
 			<Option target="main"/>
 		</Unit>
@@ -113,6 +116,9 @@
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/shell_sort/ShellSort.h">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="C:/Users/kuba/Documents/GitHub/Projekt-AiZO/tester.h">
 			<Option target="main"/>
 		</Unit>
 		<Unit filename="C:/Users/kuba/Documents/GitHub/Projekt-AiZO/CMakeLists.txt">

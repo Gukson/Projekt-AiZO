@@ -63,6 +63,5 @@ vector<T> DataGenerator::generateVector(int size, int percents) {
         int randomNumber = distribution(gen);
         data.push_back(randomNumber);
     }
-
     return data;
 }

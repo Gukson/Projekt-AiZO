@@ -179,7 +179,8 @@ CMakeFiles/main.dir/main.cpp.obj: C:/Users/kuba/Documents/GitHub/Projekt-AiZO/ma
   C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/quick_sort/QuickSort.h \
   C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/shell_sort/ShellSort.h \
   C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/GUI.h \
-  C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/GUI.tpp
+  C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/GUI.tpp \
+  C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/heapsortGUI.h
 
 CMakeFiles/main.dir/sorting_algorithms/quick_sort/QuickSort.cpp.obj: C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/quick_sort/QuickSort.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
@@ -856,6 +857,8 @@ C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/quick_sort/QuickS
 C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/shell_sort/ShellSort.h:
 
 C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/GUI.tpp:
+
+C:/Users/kuba/Documents/GitHub/Projekt-AiZO/UI/heapsortGUI.h:
 
 C:/Users/kuba/Documents/GitHub/Projekt-AiZO/sorting_algorithms/quick_sort/QuickSort.cpp:
 
