@@ -9,7 +9,7 @@ template<typename T>
 void HeapSort::heapSort(vector<T> data, int n)
 {
     build_max_heap(data);
-    if(data.size() <= 5){
+    if(data.size() <= 30){
         for(int x = 0; x< data.size(); x++ )cout << data[x] <<  " ";
         cout << endl;
     }
@@ -20,7 +20,7 @@ void HeapSort::heapSort(vector<T> data, int n)
         max_heapify(data, 0, n);
     }
 
-    if(data.size() <= 5){
+    if(data.size() <= 30){
         for(int x = 0; x< data.size(); x++ )cout << data[x] <<  " ";
         cout << endl;
         cout << endl;

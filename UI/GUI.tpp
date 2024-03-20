@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "../generator/DataGenerator.h"
 #include "../data/parsers/data_parser.h"
 #include "../data/parsers/float_parser.h"
@@ -12,6 +13,7 @@
 #include "../sorting_algorithms/shell_sort/ShellSort.h"
 #include "heapsortGUI.h"
 #include "quicksortGUi.h"
+#include "shellsortGUI.h"
 #include "GUI.h"
 
 
@@ -78,6 +80,8 @@ void GUI::mainMenu() {
                 outputFile.close();
 
                 heapSortGUI(repeat, type, temp);
+                cout << "wprowadź dowolną cyfreę, aby kontynuować: ";
+                cin >> temp;
                 break;
             }
             case 3:{
@@ -110,88 +114,157 @@ void GUI::mainMenu() {
                 outputFile.close();
 
                 quicksortGUI(repeat,type,temp,pivotWybor);
+                cout << "wprowadź dowolną cyfreę, aby kontynuować: ";
+                cin >> temp;
                 break;
             }
             case 4:{
-                cout << "Wybierz plik zawierający dane do testowania (np. data.txt)";
-                string path;
-                cin >> path;
-                vector<vector<int> > data = data_parser(path);
-                vector<vector<float> > data_float = data_parser_float(path);
-
                 int repeat;
                 cout << "Podaj ilość powtórzeń algorytmu: ";
                 cin >> repeat;
-                cout << "1. Basic" << endl;
-                cout << "2. Hibbard" << endl;
-                cout << "Wybierz z jakiego wzoru na odstęp ma korzytsać algorytm: ";
+
+                string type;
+                cout << "wybierz typ danych do testowania (int, float): ";
+                cin >> type;
+
+                cout << "podaj jaki procent danych ma być posortowany w momoencie generowania danych: ";
                 int temp;
                 cin >> temp;
-                ShellSort s1(data,data_float);
-                switch (temp) {
-                    case 1: {
-                        cout << "Na jakim typie danych algorytm ma zostać przetestowany?" << endl;
-                        cout << "1. int" << endl;
-                        cout << "2. float" << endl;
-                        int temp2;
-                        cin >> temp2;
-                        switch (temp2) {
-                            case 1: {
-                                s1.testShellSort_int(repeat,s1.shellSort_1_int,"Basic method - int");
-                                break;
-                            }
-                            case 2: {
-                                s1.testShellSort_float(repeat,s1.shellSort_1_float,"Basic method - float");
-                                break;
-                            }
-                        }
-                        break;
-                    }
-                    case 2:{
-                        cout << "Na jakim typie danych algorytm ma zostać przetestowany?" << endl;
-                        cout << "1. int" << endl;
-                        cout << "2. float" << endl;
-                        int temp2;
-                        cin >> temp2;
-                        switch (temp2) {
-                            case 1: {
-                                s1.testShellSort_int(repeat,s1.shellSort_2_int,"Hibbard method - int");
-                                break;
-                            }
-                            case 2: {
-                                s1.testShellSort_float(repeat,s1.shellSort_2_float,"Hibbard method - float");
-                                break;
-                            }
-                        }
-                        break;
-                    }
 
+                cout << "Jaki pivot wybrać? " << endl << "1. Basic\n" << "2. Hibbard\n";
+                int pattern;
+                cin >> pattern;
+
+                ofstream outputFile("../data/output.txt", std::ios_base::app);
+                if (!outputFile.is_open()) {
+                    cerr << "Error opening file." << endl;
+                    return;
                 }
+                if(type == "int"){
+                    outputFile << "Shell Sort - basic" << endl << endl;
+                } else if(type == "float"){
+                    outputFile << "Shell Sort - Hibbard" << endl << endl;
+                }
+                outputFile.close();
+
+                shellSortGUI(repeat,type,temp,pattern);
+                cout << "wprowadź dowolną cyfreę, aby kontynuować: ";
+                cin >> temp;
                 break;
             }
             case 5:{
-//                cout << "Wybierz plik zawierający dane do testowania (np. data.txt)";
-//                string path;
-//                cin >> path;
-//
-//                int repeat;
-//                cout << "Podaj ilość powtórzeń algorytmu: ";
-//                cin >> repeat;
-//
-//                vector<vector<int> > data = data_parser(path);
-//                vector<vector<float> > data_float = data_parser_float(path);
-//                auto start = chrono::high_resolution_clock::now();
-//                HeapSort h1(data);
-//                h1.testHeapSort(repeat);
-//                QuickSort q1(data);
-//                q1.run(repeat);
-//                ShellSort s1(data,data_float);
-//                s1.run(repeat);
-//                auto finish = chrono::high_resolution_clock::now();
-//                auto ms_int = chrono::duration_cast<chrono::milliseconds>(finish - start);
-//                chrono::duration<double, std::milli> ms_double = finish - start;
-//                cout << endl;
-//                cout << "Całość zajęła: " << ms_double.count() / 60000 << " min";
+                ofstream outputFile("../data/output.txt", std::ios_base::app);
+                if (!outputFile.is_open()) {
+                    cerr << "Error opening file." << endl;
+                    return;
+                }
+                outputFile << "Heap Sort - int\n";
+                outputFile.close();
+                auto start = chrono::high_resolution_clock::now();
+
+                vector<int> help;
+                help.push_back(15000);
+
+
+                for(int x = 0; x < help.size(); x++){
+                    heapSortGUI(help[x],"int",0);
+                    heapSortGUI(help[x],"int",33);
+                    heapSortGUI(help[x],"int",66);
+                }
+
+
+                fstream fs;
+                fs.open ("../data/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+                fs << "Heap Sort - float\n";
+                fs.close();
+                for(int x = 0; x < help.size(); x++){
+                    heapSortGUI(help[x],"float",0);
+                    heapSortGUI(help[x],"float",33);
+                    heapSortGUI(help[x],"float",66);
+                }
+
+
+                fs.open ("../data/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+                fs << "Quick Sort - int\n";
+                fs.close();
+
+
+                for(int x = 0; x < help.size(); x++){
+                    quicksortGUI(help[x],"int",0,1);
+                    quicksortGUI(help[x],"int",0,2);
+                    quicksortGUI(help[x],"int",0,3);
+                    quicksortGUI(help[x],"int",0,4);
+
+                    quicksortGUI(help[x],"int",33,1);
+                    quicksortGUI(help[x],"int",33,2);
+                    quicksortGUI(help[x],"int",33,3);
+                    quicksortGUI(help[x],"int",33,4);
+
+                    quicksortGUI(help[x],"int",66,1);
+                    quicksortGUI(help[x],"int",66,2);
+                    quicksortGUI(help[x],"int",66,3);
+                    quicksortGUI(help[x],"int",66,4);
+                }
+
+                fs.open ("../data/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+                fs << "Quick Sort - float\n";
+                fs.close();
+
+
+                for(int x = 0; x < help.size(); x++){
+                    quicksortGUI(help[x],"float",0,1);
+                    quicksortGUI(help[x],"float",0,2);
+                    quicksortGUI(help[x],"float",0,3);
+                    quicksortGUI(help[x],"float",0,4);
+
+                    quicksortGUI(help[x],"float",33,1);
+                    quicksortGUI(help[x],"float",33,2);
+                    quicksortGUI(help[x],"float",33,3);
+                    quicksortGUI(help[x],"float",33,4);
+
+                    quicksortGUI(help[x],"float",66,1);
+                    quicksortGUI(help[x],"float",66,2);
+                    quicksortGUI(help[x],"float",66,3);
+                    quicksortGUI(help[x],"float",66,4);
+                }
+
+                fs.open ("../data/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+                fs << "Shell Sort - int\n";
+                fs.close();
+
+
+                for(int x = 0; x < help.size(); x++){
+                    shellSortGUI(help[x],"int",0,1);
+                    shellSortGUI(help[x],"int",33,1);
+                    shellSortGUI(help[x],"int",66,1);
+
+
+                    shellSortGUI(help[x],"int",0,2);
+                    shellSortGUI(help[x],"int",33,2);
+                    shellSortGUI(help[x],"int",66,2);
+                }
+
+                fs.open ("../data/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+                fs << "Shell Sort - float\n";
+                fs.close();
+
+
+                for(int x = 0; x < help.size(); x++){
+                    shellSortGUI(help[x],"float",0,1);
+                    shellSortGUI(help[x],"float",33,1);
+                    shellSortGUI(help[x],"float",66,1);
+
+
+                    shellSortGUI(help[x],"float",0,2);
+                    shellSortGUI(help[x],"float",33,2);
+                    shellSortGUI(help[x],"float",66,2);
+                }
+
+
+                auto finish = chrono::high_resolution_clock::now();
+                chrono::duration<double, std::milli> ms_double = finish - start;
+                cout << ms_double.count()*60000 << endl;
+
                 break;
             }
         }
