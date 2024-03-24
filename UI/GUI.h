@@ -4,17 +4,19 @@
 
 #ifndef AIZO_GUI_H
 #define AIZO_GUI_H
+#include "../generator/DataGenerator.h"
+#include "../sorting_algorithms/heap_sort/heap_sort.h"
+#include "../sorting_algorithms/quick_sort/QuickSort.h"
+#include "../sorting_algorithms/shell_sort/ShellSort.h"
 
 
 class GUI {
     public:
         void mainMenu();
 };
-
-
-
+#include "testHeapSort.h"
+#include "testQuickSort.h"
+#include "testShellSort.h"
+#include "testEverything.h"
 #include "GUI.tpp"
-#include "heapsortGUI.h"
-#include "quicksortGUi.h"
-
 #endif //AIZO_GUI_H

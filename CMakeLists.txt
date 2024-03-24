@@ -22,9 +22,10 @@ add_executable(
         UI/GUI.h
         generator/DataGenerator.tpp
         generator/DataGenerator.h
-        UI/heapsortGUI.h
         tester.h
-        UI/quicksortGUi.h
-        UI/shellsortGUI.h
+        UI/testHeapSort.h
+        UI/testQuickSort.h
+        UI/testShellSort.h
+        UI/testEverything.h
 
 )

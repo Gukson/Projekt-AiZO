@@ -8,14 +8,9 @@
 using namespace std;
 
 class DataGenerator {
-    private:
-        vector<int > amount;
-        vector<int > percent;
-        string paths;
     public:
-        void generate(vector<int> data, vector<int> percents, string path);
-        template<typename T>
-        static vector<T> generateVector(int, int);
+        static vector<vector<int> > generateVector_int(int);
+        static vector<vector<float> > generateVector_float(int);
 };
 
 #include "DataGenerator.tpp"
