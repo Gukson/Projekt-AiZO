@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <string>
 
 #ifndef AIZO_TESTEVERYTHING_H
 #define AIZO_TESTEVERYTHING_H
@@ -135,65 +136,90 @@ void testEverything(){
         double sum = 0;
         outputFile << "INT" << endl << endl;
         int l = 0;
+        fstream fs;
+
         for(int x = 0; x < 3; x++){
+            string s = "../data/HeapSort" +   to_string(repeat[i]) + "int" + to_string(x * 33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             sum = 0;
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
+            l++;
+        }
+
+
+        for(int x = 0; x < 3; x++){
+            string s = "../data/QuickSort" +   to_string(repeat[i]) + "int" + "Left"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
+            sum = 0;
+            for(int y = 0; y < time_table[l].size(); y++){
+                sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
+            }
+            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
+            l++;
+            sum = 0;
+            s = "../data/QuickSort" +   to_string(repeat[i]) + "int" + "Central"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
+            for(int y = 0; y < time_table[l].size(); y++){
+                sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
+            }
+            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
+            l++;
+            sum = 0;
+            s = "../data/QuickSort" +   to_string(repeat[i]) + "int" + "Right"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
+            for(int y = 0; y < time_table[l].size(); y++){
+                sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
+            }
+            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
+            l++;
+            sum = 0;
+            s = "../data/QuickSort" +   to_string(repeat[i]) + "int" + "Random"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
+            for(int y = 0; y < time_table[l].size(); y++){
+                sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
+            }
+            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
         }
 
         for(int x = 0; x < 3; x++){
             sum = 0;
+            string s = "../data/ShellSort" +   to_string(repeat[i]) + "int" + "Basic"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ repeat[i] /1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
+
             sum = 0;
+            s = "../data/ShellSort" +   to_string(repeat[i]) + "int" + "Second"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
-            l++;
-            sum = 0;
-            for(int y = 0; y < time_table[l].size(); y++){
-                sum += time_table[l][y];
-            }
-            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
-            l++;
-            sum = 0;
-            for(int y = 0; y < time_table[l].size(); y++){
-                sum += time_table[l][y];
-            }
-            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
         }
-
-        for(int x = 0; x < 3; x++){
-            sum = 0;
-            for(int y = 0; y < time_table[l].size(); y++){
-                sum += time_table[l][y];
-            }
-            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
-            l++;
-
-            sum = 0;
-            for(int y = 0; y < time_table[l].size(); y++){
-                sum += time_table[l][y];
-            }
-            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
-            l++;
-        }
-
-
         cout << endl;
     }
-
-
-
-
 
     //FLOAT
 
@@ -214,6 +240,7 @@ void testEverything(){
             vector<double> temp;
             time_table.push_back(temp);
         }
+        fstream fs;
         for(int j = 0; j < repeat[i]; j++){
             vector<vector<float>> generatedData = DataGenerator::generateVector_float(repeat[i]);
             vector<float> duplicateVector;
@@ -224,6 +251,7 @@ void testEverything(){
 
             //Heap Sort
             for(int x =0; x< 3; x++){
+
                 duplicateVector.assign(generatedData[x].begin(), generatedData[x].end());
                 start = chrono::high_resolution_clock::now();
                 HeapSort::heapSort(duplicateVector, duplicateVector.size());
@@ -309,53 +337,81 @@ void testEverything(){
         int l = 0;
         for(int x = 0; x < 3; x++){
             sum = 0;
+            string s = "../data/HeapSort" +   to_string(repeat[i]) + "float" + to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ repeat[i] /1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
         }
 
         for(int x = 0; x < 3; x++){
             sum = 0;
+            string s = "../data/QuickSort" +   to_string(repeat[i]) + "float" + "Left"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
             sum = 0;
+            s = "../data/QuickSort" +   to_string(repeat[i]) + "float" + "Central"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
             sum = 0;
+            s = "../data/QuickSort" +   to_string(repeat[i]) + "float" + "Right"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
             sum = 0;
+            s = "../data/QuickSort" +   to_string(repeat[i]) + "float" + "Random"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
         }
 
         for(int x = 0; x < 3; x++){
             sum = 0;
+            string s = "../data/ShellSort" +   to_string(repeat[i]) + "float" + "Basic"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
 
             sum = 0;
+            s = "../data/ShellSort" +   to_string(repeat[i]) + "float" + "Second"+ to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
             for(int y = 0; y < time_table[l].size(); y++){
                 sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
             }
-            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ repeat[i] * 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
             l++;
         }
     }
