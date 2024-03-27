@@ -39,7 +39,7 @@ void testEverything(){
         //5 - Quick Sort - Random pivot
         //6 - Shell Sort - Basic algo
         //7 - Shell Sort - Second algo
-        for(int x = 0; x < 21;x++){
+        for(int x = 0; x < 24;x++){
             vector<double> temp;
             time_table.push_back(temp);
         }
@@ -51,6 +51,16 @@ void testEverything(){
             auto start = chrono::high_resolution_clock::now();
             auto finish = chrono::high_resolution_clock::now();
 
+            //Insert Sort
+            for(int x =0; x< 3; x++){
+                duplicateVector.assign(generatedData[x].begin(), generatedData[x].end());
+                start = chrono::high_resolution_clock::now();
+                InsertSort::insertionSort(duplicateVector, duplicateVector.size());
+                finish = chrono::high_resolution_clock::now();
+                ms_double = finish - start;
+                time_table[licznik].push_back(ms_double.count());
+                licznik++;
+            }
             //Heap Sort
             for(int x =0; x< 3; x++){
                 duplicateVector.assign(generatedData[x].begin(), generatedData[x].end());
@@ -137,6 +147,19 @@ void testEverything(){
         outputFile << "INT" << endl << endl;
         int l = 0;
         fstream fs;
+
+        for(int x = 0; x < 3; x++){
+            string s = "../data/InsertSort" +   to_string(repeat[i]) + "int" + to_string(x * 33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
+            sum = 0;
+            for(int y = 0; y < time_table[l].size(); y++){
+                sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
+            }
+            outputFile <<"Insert sort - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            fs.close();
+            l++;
+        }
 
         for(int x = 0; x < 3; x++){
             string s = "../data/HeapSort" +   to_string(repeat[i]) + "int" + to_string(x * 33) + "%.txt";
@@ -236,7 +259,7 @@ void testEverything(){
         //5 - Quick Sort - Random pivot
         //6 - Shell Sort - Basic algo
         //7 - Shell Sort - Second algo
-        for(int x = 0; x < 21;x++){
+        for(int x = 0; x < 24;x++){
             vector<double> temp;
             time_table.push_back(temp);
         }
@@ -248,6 +271,18 @@ void testEverything(){
             int licznik = 0;
             auto start = chrono::high_resolution_clock::now();
             auto finish = chrono::high_resolution_clock::now();
+
+            //Insert Sort
+            for(int x =0; x< 3; x++){
+
+                duplicateVector.assign(generatedData[x].begin(), generatedData[x].end());
+                start = chrono::high_resolution_clock::now();
+                InsertSort::insertionSort(duplicateVector, duplicateVector.size());
+                finish = chrono::high_resolution_clock::now();
+                ms_double = finish - start;
+                time_table[licznik].push_back(ms_double.count());
+                licznik++;
+            }
 
             //Heap Sort
             for(int x =0; x< 3; x++){
@@ -335,6 +370,20 @@ void testEverything(){
         double sum = 0;
         outputFile << "FLOAT" << endl << endl;
         int l = 0;
+
+        for(int x = 0; x < 3; x++){
+            sum = 0;
+            string s = "../data/InsertSort" +   to_string(repeat[i]) + "float" + to_string(x*33) + "%.txt";
+            fs.open (s, std::fstream::in | std::fstream::out | std::fstream::app);
+            for(int y = 0; y < time_table[l].size(); y++){
+                sum += time_table[l][y];
+                fs << time_table[l][y] << endl;
+            }
+            outputFile <<"Insert sort - "<< repeat[i] << " -> " << sum/ repeat[i] /1000  << "s " << x*33 << "%" << endl;
+            fs.close();
+            l++;
+        }
+
         for(int x = 0; x < 3; x++){
             sum = 0;
             string s = "../data/HeapSort" +   to_string(repeat[i]) + "float" + to_string(x*33) + "%.txt";

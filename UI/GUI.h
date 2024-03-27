@@ -8,6 +8,7 @@
 #include "../sorting_algorithms/heap_sort/heap_sort.h"
 #include "../sorting_algorithms/quick_sort/QuickSort.h"
 #include "../sorting_algorithms/shell_sort/ShellSort.h"
+#include "../sorting_algorithms/insert_sort/insert_sort.h"
 
 
 class GUI {

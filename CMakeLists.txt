@@ -27,5 +27,8 @@ add_executable(
         UI/testQuickSort.h
         UI/testShellSort.h
         UI/testEverything.h
+        sorting_algorithms/insert_sort/InsertSort.tpp
+        sorting_algorithms/insert_sort/insert_sort.h
+        UI/testInserSort.h
 
 )
