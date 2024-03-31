@@ -12,7 +12,7 @@ using namespace std;
 
 void testQuickSort(){
     int repeat;
-    cout << "Podaj ilość powtórzeń algorytmu: ";
+    cout << "Podaj rozmiar tablicy do przetestownaia: ";
     cin >> repeat;
 
     string type;
@@ -36,7 +36,7 @@ void testQuickSort(){
     QuickSort q1;
     if(type == "int"){
         outputFile << "Quick Sort - int" << endl << endl;
-        for(int x = 0; x< repeat; x++){
+        for(int x = 0; x< 100; x++){
             vector<vector<int>> generatedData = DataGenerator::generateVector_int(repeat);
             for(int y = 0; y < 3; y++){
                 if(generatedData[y].size() <= 30){
@@ -83,7 +83,7 @@ void testQuickSort(){
         }
     } else if(type == "float"){
         outputFile << "Quick Sort - float" << endl << endl;
-        for(int x = 0; x< repeat; x++){
+        for(int x = 0; x< 100; x++){
             vector<vector<float>> generatedData = DataGenerator::generateVector_float(repeat);
             for(int y = 0; y < 3; y++){
                 if(generatedData[y].size() <= 30){

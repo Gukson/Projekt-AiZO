@@ -11,7 +11,7 @@ using namespace std;
 
 void testHeapSort(){
     int repeat;
-    cout << "Podaj ilość powtórzeń algorytmu: ";
+    cout << "Podaj wielkośc tablicy do testowania: ";
     cin >> repeat;
 
     string type;
@@ -32,7 +32,7 @@ void testHeapSort(){
     time_table.push_back(temp);
     if(type == "int"){
         outputFile << "Heap Sort - int" << endl << endl;
-        for(int x = 0; x< repeat; x++){
+        for(int x = 0; x< 100; x++){
             vector<vector<int>> generatedData = DataGenerator::generateVector_int(repeat);
             for(int y = 0; y < 3; y++){
                 auto start = chrono::high_resolution_clock::now();
@@ -44,7 +44,7 @@ void testHeapSort(){
         }
     } else if(type == "float"){
         outputFile << "Heap Sort - float" << endl << endl;
-        for(int x = 0; x< repeat; x++){
+        for(int x = 0; x< 100; x++){
             vector<vector<float>> generatedData = DataGenerator::generateVector_float(repeat);
             for(int y = 0; y < 3; y++){
                 auto start = chrono::high_resolution_clock::now();

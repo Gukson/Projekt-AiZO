@@ -20,10 +20,13 @@ void testEverything(){
     }
 
     vector<int> repeat;
-    repeat.push_back(5000);
     repeat.push_back(10000);
-    repeat.push_back(15000);
-    repeat.push_back(20000);
+    repeat.push_back(25000);
+    repeat.push_back(40000);
+    repeat.push_back(55000);
+    repeat.push_back(70000);
+    repeat.push_back(85000);
+    repeat.push_back(100000);
     vector<vector<double> > time_table;
 
     //int
@@ -43,7 +46,8 @@ void testEverything(){
             vector<double> temp;
             time_table.push_back(temp);
         }
-        for(int j = 0; j < repeat[i]; j++){
+        int r = 100;
+        for(int j = 0; j < r; j++){
             vector<vector<int>> generatedData = DataGenerator::generateVector_int(repeat[i]);
             vector<int> duplicateVector;
             chrono::duration<double, std::milli> ms_double;
@@ -140,7 +144,7 @@ void testEverything(){
                 }
                 std::cout << "] " << int(progress) << "%";
             }
-            progress += float(100.0/repeat[i]);
+            progress += float(100.0/100);
             cout.flush();
         }
         double sum = 0;
@@ -156,7 +160,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Insert sort - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Insert sort - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -169,7 +173,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -183,7 +187,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
             sum = 0;
@@ -193,7 +197,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
             sum = 0;
@@ -203,7 +207,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
             sum = 0;
@@ -213,7 +217,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -226,7 +230,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ repeat[i] /1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ r /1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
 
@@ -237,7 +241,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -263,8 +267,9 @@ void testEverything(){
             vector<double> temp;
             time_table.push_back(temp);
         }
+        int r = 100;
         fstream fs;
-        for(int j = 0; j < repeat[i]; j++){
+        for(int j = 0; j < r; j++){
             vector<vector<float>> generatedData = DataGenerator::generateVector_float(repeat[i]);
             vector<float> duplicateVector;
             chrono::duration<double, std::milli> ms_double;
@@ -364,7 +369,7 @@ void testEverything(){
                 }
                 std::cout << "] " << int(progress) << "%";
             }
-            progress += float(100.0/repeat[i]);
+            progress += float(100.0/100);
             cout.flush();
         }
         double sum = 0;
@@ -379,7 +384,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Insert sort - "<< repeat[i] << " -> " << sum/ repeat[i] /1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Insert sort - "<< repeat[i] << " -> " << sum/ r /1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -392,7 +397,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ repeat[i] /1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Heap sort - "<< repeat[i] << " -> " << sum/ r /1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -405,7 +410,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Left Pivot - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
             sum = 0;
@@ -415,7 +420,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Central Pivot- "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
             sum = 0;
@@ -425,7 +430,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Right Pivot- "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
             sum = 0;
@@ -435,7 +440,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Quick sort Random Pivot- "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
@@ -448,7 +453,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Basic Algo - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
 
@@ -459,7 +464,7 @@ void testEverything(){
                 sum += time_table[l][y];
                 fs << time_table[l][y] << endl;
             }
-            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ repeat[i] / 1000  << "s " << x*33 << "%" << endl;
+            outputFile <<"Shell sort Second Algo - "<< repeat[i] << " -> " << sum/ r / 1000  << "s " << x*33 << "%" << endl;
             fs.close();
             l++;
         }
